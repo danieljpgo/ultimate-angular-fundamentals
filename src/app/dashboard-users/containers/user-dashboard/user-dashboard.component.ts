@@ -52,6 +52,11 @@ export class UserDashboardComponent implements OnInit {
   handleChange2(value: string) {
     this.name = value;
   }
-
+  handleRemove(event) {
+    console.log('teste')
+  }
+  handleEdit(event) {
+    console.log('tteess')
+  }
 
 }
