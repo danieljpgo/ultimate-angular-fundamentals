@@ -1,0 +1,138 @@
+<!-- Interpolation and expressions -->
+<div>
+  <div>Interpolation and Expressions</div>
+  <div>{{firstNumber + secondNumber}}</div>
+  <div>{{happyFace ? ';)' : ';('}}</div>
+</div>
+
+<!-- Property binding -->
+<div>
+  <input
+    type="text"
+    [value]="name"
+    (input)="handleInput($event)">
+  <button (click)=handleClick()>Test</button>
+  <div>{{name}}</div>
+</div>
+
+<div>
+  <input
+    type="text"
+    [ngModel]="name"
+    (change)="handleChange()">
+  <div>{{name}}</div>
+</div>
+<!-- Event binding -->
+<div>
+  <input
+    type="text" #username>
+  <div>{{name}}</div>
+  <button (click)=handleClickRef(username.value)>Get Value</button>
+  console.log
+</div>
+
+<!-- Two-way databinding -->
+<div>
+  <input
+    type="text"
+    [(ngModel)]="name">
+  <div>{{name}}</div>
+</div>
+
+<!-- Rendering flows -->
+
+<!-- ngIf -->
+<div>
+  <input
+    type="text"
+    [value]="name"
+    (input)="handleChange2($event.target.value)">
+  <div *ngIf="name.length">Teste{{name}}</div>
+  <ng-template [ngIf]="name.length > 2">
+    <div *ngIf="name.length > 2">Teste{{name}}</div>
+  </ng-template>
+</div>
+<!-- ngFor -->
+
+<div>
+  <h3>Airline Passagers</h3>
+  <ul>
+    <li *ngFor="let passager of passengers, let i = index">
+      {{i}} - {{passager.fullName}}
+    </li>
+  </ul>
+
+  <h3>Airline Passagers</h3>
+  <ul>
+    <ng-template ngFor let-passager let-i = "index" [ngForOf]="passengers">
+      <li>
+        {{i}} - {{passager.fullName}}
+      </li>
+    </ng-template>
+  </ul>
+</div>
+
+<!-- ngClass and classNames -->
+
+<div>
+  <h3>Airline Passagers</h3>
+  <ul>
+    <li *ngFor="let passager of passengers, let i = index">
+      <span class="status" [class.check]="passager.checkedIn"></span>
+      {{i}} - {{passager.fullName}}
+    </li>
+  </ul>
+  <h3>Airline Passagers</h3>
+  <ul>
+    <li *ngFor="let passager of passengers, let i = index">
+      <span class="status" [ngClass]="{'check' : passager.checkedIn}"></span>
+      {{i}} - {{passager.fullName}}
+    </li>
+  </ul>
+</div>
+
+
+<!-- Style -->
+
+<div>
+  <h3>Airline Passagers</h3>
+  <ul>
+    <li *ngFor="let passager of passengers, let i = index">
+      <span class="status" [style.backgroundColor]="passager.checkedIn ? 'red' : 'blue'"></span>
+      {{i}} - {{passager.fullName}}
+    </li>
+  </ul>
+  <h3>Airline Passagers</h3>
+  <ul>
+    <li *ngFor="let passager of passengers, let i = index">
+      <span class="status" [ngStyle]="{'background-color' : passager.checkedIn ? 'red' : 'blue'}"></span>
+      {{i}} - {{passager.fullName}}
+    </li>
+  </ul>
+</div>
+
+
+<!-- Pipes -->
+
+<div>
+  <h3>Airline Passagers</h3>
+  <ul>
+    <li *ngFor="let passager of passengers, let i = index">
+      <span class="status" [ngStyle]="{'background-color' : passager.checkedIn ? 'red' : 'blue'}"></span>
+      {{ passager.checkInDate | json}}
+      {{ passager.checkInDate | date: 'yMMMMd' }}
+    </li>
+  </ul>
+</div>
+
+<!-- Safe Navegation -->
+
+<div>
+  <h3>Airline Passagers</h3>
+  <ul>
+    <li *ngFor="let passager of passengers, let i = index">
+      <span class="status" [ngStyle]="{'background-color' : passager.checkedIn ? 'red' : 'blue'}"></span>
+      {{ passager.children?.length }}
+    </li>
+  </ul>
+</div>
