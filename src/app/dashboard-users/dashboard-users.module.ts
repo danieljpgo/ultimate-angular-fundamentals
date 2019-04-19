@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
 
 // Containers
 import { UserDashboardComponent } from './containers/user-dashboard/user-dashboard.component';
@@ -23,7 +23,7 @@ import { DashboardUsersService } from './dashboard-users.service';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    HttpClientModule
   ],
   providers: [
     DashboardUsersService
