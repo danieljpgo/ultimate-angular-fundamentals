@@ -17,7 +17,7 @@ export class UserDashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('ngOnInit')
+    // console.log('ngOnInit')
     this.passengers = [{
       id: 1,
       fullName: 'Stephen',
@@ -43,7 +43,7 @@ export class UserDashboardComponent implements OnInit {
     this.name = 'Catra';
   }
   handleClickRef(value: string) {
-    console.log(value);
+    // console.log(value);
   }
   handleChange() {
     this.name = 'sss';
@@ -52,11 +52,17 @@ export class UserDashboardComponent implements OnInit {
   handleChange2(value: string) {
     this.name = value;
   }
-  handleRemove(event) {
-    console.log('teste')
-  }
-  handleEdit(event) {
-    console.log('tteess')
+
+  handleRemove(event: Passenger) {
+    this.passengers = this.passengers.filter((passenger: Passenger) => passenger.id !== event.id)
   }
 
+  handleEdit(event: Passenger) {
+    this.passengers = this.passengers.map((passenger: Passenger) => {
+      if(passenger.id === event.id) {
+        passenger = Object.assign({}, passenger, event)
+      }
+      return passenger;
+    })
+  }
 }
