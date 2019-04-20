@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {Router, ActivatedRoute, ParamMap} from "@angular/router";
 
 import { DashboardUsersService } from "../../dashboard-users.service";
 
 import { Passenger } from "../../models/user.interface";
+import { switchMap } from "rxjs/operators";
 
 @Component({
   selector: 'app-user-viewer',
@@ -11,11 +13,15 @@ import { Passenger } from "../../models/user.interface";
 })
 export class UserViewerComponent implements OnInit {
 
-  constructor(private passengerService: DashboardUsersService ) { }
+  constructor(private  router: Router, private route: ActivatedRoute, private passengerService: DashboardUsersService ) { }
+
   passgener: Passenger;
 
   ngOnInit() {
-    this.passengerService.getPassenger(1).subscribe(((data: Passenger) => this.passgener = data))
+    this.route.paramMap.pipe(
+      switchMap((params: ParamMap) =>  {
+        return this.passengerService.getPassenger(parseInt(params.get('id')))
+      })).subscribe(((data: Passenger) => this.passgener = data));
   }
 
   onUpdatePassenger(event: Passenger) {
@@ -24,4 +30,7 @@ export class UserViewerComponent implements OnInit {
     })
   }
 
+  goBack() {
+    this.router.navigate(['/passengers'])
+  }
 }

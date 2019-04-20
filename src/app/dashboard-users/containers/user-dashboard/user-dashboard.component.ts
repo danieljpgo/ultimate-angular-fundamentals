@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { DashboardUsersService } from '../../dashboard-users.service'
 
 import { Passenger } from '../../models/user.interface';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-user-dashboard',
@@ -17,7 +18,7 @@ export class UserDashboardComponent implements OnInit {
   name = '';
   passengers: Passenger[] = [];
 
-  constructor(private passengerService: DashboardUsersService) { }
+  constructor(private router: Router, private passengerService: DashboardUsersService) { }
 
   ngOnInit() {
     this.handleGet();
@@ -42,6 +43,10 @@ export class UserDashboardComponent implements OnInit {
         return passenger;
       })
     });
+  }
+
+  handleView(event: Passenger) {
+    this.router.navigate(['/passengers', event.id])
   }
 
   // handleInput(event: any) {

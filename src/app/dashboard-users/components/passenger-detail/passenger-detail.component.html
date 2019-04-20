@@ -13,5 +13,5 @@
   <div>Check in date : {{detail.checkInDate ? (detail.checkInDate | date: 'dd/mm/yy') : 'Not checked in'}}</div>
   <button (click)="toggleEdit()">{{ editing ? 'Done' : 'Edit'}}</button>
   <button (click)="onRemove()">Remove</button>
-
+  <button (click)="goPassenger()">View</button>
 </div>

@@ -14,13 +14,18 @@ interface Nav {
 export class AppComponent {
   title = 'ultimate-angular-project';
 
-  nav: Nav[] = [{
+  nav: Nav[] = [
+    {
       link: '/',
       name: 'Home',
       exact: true
     }, {
-      link: '/',
-      name: 'Opss',
+      link: '/passengers',
+      name: 'Passenger',
+      exact: true
+    }, {
+      link: '/oops',
+      name: '404',
       exact: false
     }
   ]

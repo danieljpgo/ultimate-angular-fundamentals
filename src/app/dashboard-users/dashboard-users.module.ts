@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
+import {RouterModule} from "@angular/router";
 
 // Containers
 import { UserDashboardComponent } from './containers/user-dashboard/user-dashboard.component';
@@ -15,6 +16,9 @@ import { PassengerFormComponent } from './components/passenger-form/passenger-fo
 // Services
 import { DashboardUsersService } from './dashboard-users.service';
 
+import { routes } from "../app-routing.module";
+
+
 @NgModule({
   declarations: [
     // Containers
@@ -27,12 +31,13 @@ import { DashboardUsersService } from './dashboard-users.service';
   ],
   exports: [
     // UserDashboardComponent,
-    UserViewerComponent,
+    // UserViewerComponent,
   ],
   imports: [
     CommonModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forChild(routes)
   ],
   providers: [
     DashboardUsersService
