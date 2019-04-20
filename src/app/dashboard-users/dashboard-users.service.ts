@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Passenger } from "./models/user.interface";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { map } from 'rxjs/operators';
 import {environment} from "../../environments/environment";
@@ -19,7 +19,12 @@ export class DashboardUsersService {
   }
 
   getUpdatePassenger(passenger: Passenger): Observable<Passenger> {
-    return this.http.put(`${apiUrl}/passengers/${passenger.id}`, passenger).pipe(map((response: Passenger) => response));
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.http.put(`${apiUrl}/passengers/${passenger.id}`, passenger, httpOptions).pipe(map((response: Passenger) => response));
   }
 
   getDeletePassenger(passenger: Passenger): Observable<Passenger> {
