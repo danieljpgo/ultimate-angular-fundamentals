@@ -17,4 +17,12 @@ export class DashboardUsersService {
   getPassengers(): Observable<Passenger[]> {
     return this.http.get(`${apiUrl}/passengers`).pipe(map((response: Passenger[]) => response));
   }
+
+  getUpdatePassenger(passenger: Passenger): Observable<Passenger> {
+    return this.http.put(`${apiUrl}/passengers/${passenger.id}`, passenger).pipe(map((response: Passenger) => response));
+  }
+
+  getDeletePassenger(passenger: Passenger): Observable<Passenger> {
+    return this.http.delete(`${apiUrl}/passengers/${passenger.id}`).pipe(map((response: Passenger) => response));
+  }
 }
