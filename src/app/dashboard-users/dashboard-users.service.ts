@@ -15,7 +15,11 @@ const apiUrl: string = environment.apiUrl;
 export class DashboardUsersService {
   constructor(private http: HttpClient) {}
 
-
+  getPassenger(id: number): Observable<Passenger> {
+    return this.http.get(`${apiUrl}/passengers/${id}`)
+      .pipe(map((response: Passenger) => response))
+      .pipe(catchError(this.handleError));
+  }
 
   getPassengers(): Observable<Passenger[]> {
     return this.http.get(`${apiUrl}/passengers`)
