@@ -6,10 +6,12 @@
     padding: 10px 20px;
     background: gray;
     border-radius: 6px;
+    margin: 0 4px;
     a{
       color: #3935ed;
+      text-decoration: none;
       &.active {
-        color: #1df1e4;
+        color: #f11f26;
       }
     }
   }
