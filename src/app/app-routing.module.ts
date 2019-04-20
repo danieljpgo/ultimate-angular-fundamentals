@@ -8,6 +8,7 @@ import { UserViewerComponent } from "./dashboard-users/containers/user-viewer/us
 
 
 export const routes: Routes = [
+  // redirectTo: 'passengers'
   { path: '', component: HomeComponent, pathMatch: 'full'},
   { path: 'passengers',
     children: [
@@ -18,6 +19,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
+// { useHash: true}
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
