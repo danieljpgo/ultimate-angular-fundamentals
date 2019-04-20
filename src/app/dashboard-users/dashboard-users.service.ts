@@ -3,8 +3,9 @@ import { Passenger } from "./models/user.interface";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { map } from 'rxjs/operators';
+import {environment} from "../../environments/environment";
 
-const PASSENGER_API: string = '/api/passengers';
+const apiUrl: string = environment.apiUrl;
 
 // {providedIn: 'root'}
 
@@ -14,6 +15,6 @@ export class DashboardUsersService {
   constructor(private http: HttpClient) {}
 
   getPassengers(): Observable<Passenger[]> {
-    return this.http.get(PASSENGER_API).pipe(map((response: any) => response.json()));
+    return this.http.get(`${apiUrl}/passengers`).pipe(map((response: Passenger[]) => response));
   }
 }
