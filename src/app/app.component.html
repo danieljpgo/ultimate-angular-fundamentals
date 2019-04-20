@@ -9,6 +9,18 @@
 <!--<app-user-dashboard></app-user-dashboard>-->
 
 <div>
-  <app-user-viewer></app-user-viewer>
+  <nav>
+    <div class="nav" >
+      <div *ngFor="let item of nav">
+        <a
+          [routerLink]="item.link"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact : item.exact }">
+          {{ item.name }}
+        </a>
+      </div>
+    </div>
+
+  </nav>
+  <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>

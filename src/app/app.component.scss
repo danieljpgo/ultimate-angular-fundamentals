@@ -1,0 +1,17 @@
+.nav{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  div{
+    padding: 10px 20px;
+    background: gray;
+    border-radius: 6px;
+    a{
+      color: #3935ed;
+      &.active {
+        color: #1df1e4;
+      }
+    }
+  }
+
+}
