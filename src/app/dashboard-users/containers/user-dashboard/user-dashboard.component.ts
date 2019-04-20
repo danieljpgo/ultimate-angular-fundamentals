@@ -20,23 +20,28 @@ export class UserDashboardComponent implements OnInit {
   constructor(private passengerService: DashboardUsersService) { }
 
   ngOnInit() {
-    this.passengerService.getPassengers().subscribe((data: Passenger[]) => {
-      this.passengers = data;
-      console.log(data)
-    })
+    this.handleGet();
+  }
+
+  handleGet() {
+    this.passengerService.getPassengers().subscribe((data: Passenger[]) => this.passengers = data)
   }
 
   handleRemove(event: Passenger) {
-    this.passengers = this.passengers.filter((passenger: Passenger) => passenger.id !== event.id)
+    this.passengerService.getDeletePassenger(event).subscribe(((data: Passenger) => {
+      this.passengers = this.passengers.filter((passenger: Passenger) => passenger.id !== event.id)
+    }))
   }
 
   handleEdit(event: Passenger) {
-    this.passengers = this.passengers.map((passenger: Passenger) => {
-      if(passenger.id === event.id) {
-        passenger = Object.assign({}, passenger, event)
-      }
-      return passenger;
-    })
+    this.passengerService.getUpdatePassenger(event).subscribe((data: Passenger) => {
+      this.passengers = this.passengers.map((passenger: Passenger) => {
+        if(passenger.id === event.id) {
+          passenger = Object.assign({}, passenger, event)
+        }
+        return passenger;
+      })
+    });
   }
 
   // handleInput(event: any) {
