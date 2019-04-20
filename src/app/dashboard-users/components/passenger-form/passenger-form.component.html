@@ -1,4 +1,4 @@
-<form #formUser="ngForm" novalidate>
+<form (ngSubmit)="handleSubmit(formUser.value, formUser.valid)" #formUser="ngForm" novalidate>
   {{detail | json}}
   <div>
     Passenger name:
@@ -41,7 +41,7 @@
     <input
       type="number"
       name="checkedInDate"
-      [ngModel]="detail.checkInDate">
+      [ngModel]="detail?.checkInDate">
   </div>
 
   <div>
@@ -56,13 +56,9 @@
       </option>
     </select>
   </div>
-  <div>
-    {{ formUser.value | json}}
-  </div>
-  <div>
-    Valid:{{ formUser.valid | json }}
-  </div>
-  <div>
-    Invalid:{{ formUser.invalid| json}}
-  </div>
+
+  <button type="submit" [disabled]="formUser?.invalid">
+    Update Passenger
+  </button>
+
 </form>
