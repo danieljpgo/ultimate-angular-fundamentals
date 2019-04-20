@@ -1,17 +1,17 @@
 {
   "passengers": [
     {
-      "fullName": "Stephen AA",
-      "id": 1,
-      "checkedIn": true,
-      "baggage": "none",
-      "checkedInDate": 1452292999
-    },
-    {
       "id": 2,
       "fullName": "Valesca Silva",
       "checkedIn": true,
       "checkInDate": 1452292999,
+      "baggage": " "
+    },
+    {
+      "id": 2,
+      "fullName": "Teste Silva",
+      "checkedIn": true,
+      "checkInDate": 1452452999,
       "baggage": " "
     },
     {
@@ -26,6 +26,13 @@
       "fullName": "Wallace Silva",
       "checkedIn": false,
       "checkInDate": 1752292999,
+      "baggage": " "
+    },
+    {
+      "id": 5,
+      "fullName": "Jorge Matheus",
+      "checkedIn": true,
+      "checkInDate": 1452452999,
       "baggage": " "
     }
   ]
