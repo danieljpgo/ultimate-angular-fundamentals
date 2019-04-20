@@ -2,32 +2,31 @@
   "passengers": [
     {
       "id": 1,
-      "fullName": "Stephen Pacheco a",
+      "fullName": "Stephen Pacheco",
       "checkedIn": true,
       "checkInDate": 1452292999,
-      "children": [
-        {
-          "name": "Ted",
-          "age": 12
-        }
-      ]
+      "baggage": ""
     },
     {
       "id": 2,
       "fullName": "Valesca Silva",
       "checkedIn": true,
       "checkInDate": 1452292999,
-      "children": [
-        {
-          "name": "Ted",
-          "age": 12
-        }
-      ]
+      "baggage": " "
     },
     {
       "id": 3,
-      "fullName": "James",
-      "checkedIn": false
+      "fullName": "Lucas Silva",
+      "checkedIn": true,
+      "checkInDate": 1452452999,
+      "baggage": " "
+    },
+    {
+      "id": 4,
+      "fullName": "Wallace Silva",
+      "checkedIn": false,
+      "checkInDate": 1752292999,
+      "baggage": " "
     }
   ]
 }
