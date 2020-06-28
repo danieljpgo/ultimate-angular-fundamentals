@@ -36,11 +36,12 @@
   <img alt="License" src="https://img.shields.io/badge/license-MIT-de3f32?style=flat-square">
 </p>
 
-> understanding the fundamentals is always important. :clipboard:
+> Understanding the fundamentals is always important. :clipboard:
 
 ----
 
 <p align="center">
+   <a href="#memo-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
    <a href="#clipboard-course">Course</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
    <a href="#pushpin-topics">Topics</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
    <a href="#man_technologist-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -48,16 +49,14 @@
    <a href="#page_with_curl-license">License</a>
 </p>
 
-<!-- <h1 align="center">
-   <img
-      alt="kids jumping rope"
-      title="Playroom"
-      src=".github/web-final.gif"
-      width="600px" />
-</h1> -->
+## :memo: Project
+Since I already worked with angular at the time, the course was fundamental, as it covered all the gaps that existed about the framework
 
 ## :clipboard: Course
-Project aims to list toy donation companies and institutions, offering an easily accessible platform both for finding donation points and for registering new entities. 
+This course teaches you to make informed decisions by diving deep into real concepts, architecture, and unidirectional dataflow. We then weave our way through the core framework essentials, giving you all the fundamental knowledge to build your first real-world Angular app.
+
+- [Ultimate Courses](https://ultimatecourses.com)
+- [Angular Fundamentals](https://ultimatecourses.com/learn/angular-fundamentals)
 
 ## :pushpin: Topics
 The main topics of the course are:
